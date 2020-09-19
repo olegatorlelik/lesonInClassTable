@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.table {
+  border: 2px solid red;
+}
+
+.table__box {
+  border: 2px solid red;
+  padding: 8px;
+}
+.head__line {
+  border: 2px solid red;
+  padding: 8px;
+}
