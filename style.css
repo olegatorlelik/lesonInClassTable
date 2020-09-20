@@ -2,9 +2,32 @@
   margin: 0;
   box-sizing: border-box;
 }
-
+#form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border: 3px solid purple;
+  border-radius: 20px;
+}
+.text {
+  font-size: 18px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  color: crimson;
+  text-align: center;
+  padding: 40px 0;
+}
+.form__text {
+  font-size: 18px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-align: center;
+  border: 2px solid rgb(95, 26, 122);
+  color: rgb(95, 26, 122);
+}
 .table {
-  border: 2px solid red;
+  border: 3px solid purple;
+  margin: 0 auto;
 }
 
 .table__box {
@@ -12,6 +35,24 @@
   padding: 8px;
 }
 .head__line {
-  border: 2px solid red;
+  border: 3px solid purple;
   padding: 8px;
+}
+.box__btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+.btn__style {
+  border: 3px solid rgb(0, 57, 110);
+  color: rgb(238, 137, 4);
+  background: none;
+  padding: 10px 30px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  outline: none;
 }

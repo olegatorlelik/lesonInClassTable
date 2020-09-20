@@ -10,8 +10,10 @@ const btnDelet = document.querySelector("#delet");
 const checkColection = [...document.querySelectorAll("#check")];
 const btnSum = document.querySelector("#summ");
 const resaltSumm = document.querySelector("#textSumm");
+const btnSortMonny = document.querySelector("#sortMonny");
+const btnSortAge = document.querySelector("#sortBerthday");
+
 let arr = [];
-let sum = 0;
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -46,8 +48,16 @@ btnSum.addEventListener("click", (event) => {
       arr[index].check = false;
     }
   });
-  resaltSumm.innerHTML = "";
-  resaltSumm.innerHTML = getCheckElforSumm();
+  resaltSumm.textContent = "";
+  const sumElemInInner = getCheckElforSumm();
+  resaltSumm.textContent += sumElemInInner;
+});
+
+btnSortMonny.addEventListener("click", (event) => {
+  sortElemMonny();
+});
+btnSortAge.addEventListener("click", (event) => {
+  sortElemAge();
 });
 
 const setElCheck = () => {
@@ -72,13 +82,43 @@ const getCheckEl = () => {
 };
 
 const getCheckElforSumm = () => {
-  return arr.reduce((acc, elem) => {
+  let result = arr.reduce((acc, elem) => {
     if (elem.check) {
-      console.log(acc);
-      console.log(elem.monny);
       return acc + elem.monny;
+    } else {
+      return acc;
     }
   }, 0);
+
+  return result;
+};
+
+const sortElemMonny = () => {
+  arr = arr.sort((a, b) => {
+    return a.monny - b.monny;
+  });
+  const colectionLine = [...document.querySelectorAll(".table__line")];
+  colectionLine.forEach((elem) => {
+    elem.remove();
+  });
+  arr.forEach((elem) => {
+    createElemInTable(elem.name, elem.age, elem.date, elem.monny);
+  });
+};
+
+const sortElemAge = () => {
+  arr = arr.sort((a, b) => {
+    let startTime = new Date(a.date).getTime();
+    let finishTime = new Date(b.date).getTime();
+    return startTime - finishTime;
+  });
+  const colectionLine = [...document.querySelectorAll(".table__line")];
+  colectionLine.forEach((elem) => {
+    elem.remove();
+  });
+  arr.forEach((elem) => {
+    createElemInTable(elem.name, elem.age, elem.date, elem.monny);
+  });
 };
 
 const createElemInTable = (

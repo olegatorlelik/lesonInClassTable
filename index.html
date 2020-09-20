@@ -8,24 +8,38 @@
   </head>
   <body>
     <form id="form">
-      <input type="text" id="name" placeholder="name" />
-      <input type="text" id="age" placeholder="age" />
-      <input type="date" id="data" placeholder="data in board" />
-      <input type="text" id="cash" placeholder="sach" />
-      <input type="submit" id="add" placeholder="name" />
+      <input type="text" id="name" placeholder="name" class="form__text" />
+      <input type="text" id="age" placeholder="age" class="form__text" />
+      <input
+        type="date"
+        id="data"
+        placeholder="data in board"
+        class="form__text"
+      />
+      <input type="text" id="cash" placeholder="sach" class="form__text" />
+      <input type="submit" id="add" placeholder="name" class="form__text" />
     </form>
-    <table class="table" id="table">
+    <table class="table form__text" id="table">
       <tr id="headline">
         <td class="head__line"></td>
-        <td class="head__line">IMS</td>
+        <td class="head__line">ФИО</td>
         <td class="head__line">Год рождения</td>
         <td class="head__line">Дата приема на работу</td>
-        <td class="head__line">$</td>
+        <td class="head__line">Зарплата</td>
       </tr>
-      <p class="textCurrent" id="textSumm">summ</p>
+      <p class="text">
+        Заработная плата выделенных сотрудников:
+        <span class="textCurrent" id="textSumm"></span>
+      </p>
     </table>
-    <button id="delet">delet</button>
-    <button id="summ">summ</button>
+    <div class="box__btn">
+      <button id="delet" class="btn__style">Увоить</button>
+      <button id="summ" class="btn__style">Зарплата</button>
+      <button id="sortMonny" class="btn__style">Сортировка по ЗП</button>
+      <button id="sortBerthday" class="btn__style">
+        Сортировка по приему на работу
+      </button>
+    </div>
     <script src="index.js"></script>
   </body>
 </html>
